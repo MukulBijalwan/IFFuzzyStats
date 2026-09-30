@@ -1,6 +1,3 @@
-# IFFuzzyStats: Intuitionistic Fuzzy Statistics Toolkit
-# Package-level documentation
-
 #' IFFuzzyStats: Intuitionistic Fuzzy Statistics Toolkit
 #'
 #' A comprehensive toolkit for intuitionistic fuzzy sets (Atanassov, 1986),
@@ -20,7 +17,7 @@
 #'   \item approximate reasoning / compositional inference
 #'     (\code{\link{if_compose}}, \code{\link{if_infer}}),
 #'   \item multi-criteria decision helpers
-#'     (\code{\link{if_topsis}}, \code{\link{if_rank}}).
+#'     (\code{\link{if_topsis}}, \code{\link{if_rank_df}}).
 #' }
 #'
 #' @references
