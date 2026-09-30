@@ -1,5 +1,7 @@
 # IFFuzzyStats: Intuitionistic Fuzzy Statistics Toolkit
 
+[![R-CMD-check](https://github.com/MukulBijalwan/IFFuzzyStats/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/MukulBijalwan/IFFuzzyStats/actions/workflows/R-CMD-check.yaml)
+
 Intuitionistic fuzzy sets (Atanassov, 1986) carry membership $\mu$,
 non-membership $\nu$ ($\mu+\nu\le 1$) and hesitation $\pi=1-\mu-\nu$.
 **IFFuzzyStats** is a zero-dependency (base-R only) toolkit covering:
