@@ -1,0 +1,21 @@
+Package: IFFuzzyStats
+Type: Package
+Title: Intuitionistic Fuzzy Statistics Toolkit
+Version: 0.1.0
+Authors@R: c(person("Mukul", "Bijalwan", email = "mukulbijalwan555@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0009-0001-3040-6912")), person("Gunjan", "Aggrwal", role = "aut"), person("Mukul", "Jain", role = "aut"))
+Maintainer: Mukul Bijalwan <mukulbijalwan555@gmail.com>
+Description: A comprehensive toolkit for intuitionistic fuzzy sets (Atanassov, 1986):
+    constructors and arithmetics for intuitionistic fuzzy values, Xu and Yager
+    aggregation operators (IFWA, IFWG, IFOWA, IFOWG, IFHA, IFHG, Einstein),
+    entropy and distance/similarity measures (Szmidt-Kacprzyk, Vlachos-Sergiadis,
+    Ye, Hamming, Euclidean, Hausdorff and others), intuitionistic fuzzy
+    c-means and k-means clustering, approximate reasoning / compositional
+    inference, and multi-criteria decision helpers (IF-TOPSIS, score ranking).
+    All computations use only base R with fully vectorised implementations.
+License: GPL-3
+Encoding: UTF-8
+Suggests: testthat (>= 3.0.0), knitr, rmarkdown
+VignetteBuilder: knitr
+Config/testthat/edition: 3
+NeedsCompilation: no
+Config/roxygen2/version: 8.1.0

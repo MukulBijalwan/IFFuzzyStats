@@ -1,0 +1,77 @@
+---
+title: "IFFuzzyStats: Intuitionistic Fuzzy Statistics in R"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{IFFuzzyStats: Intuitionistic Fuzzy Statistics in R}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+library(IFFuzzyStats)
+```
+
+## Intuitionistic fuzzy values
+
+An intuitionistic fuzzy value (IFV) is a pair $(\mu, \nu)$ with
+$\mu+\nu \le 1$; hesitation is $\pi = 1-\mu-\nu$.
+
+```{r}
+a <- ifv(0.6, 0.3)
+a
+if_pi(a)
+if_score(a)
+```
+
+## Aggregation
+
+Xu (2007) weighted averaging / geometric operators plus ordered and
+hybrid variants:
+
+```{r}
+x <- ifv(c(0.6, 0.5, 0.7), c(0.3, 0.2, 0.1))
+ifwa(x, c(0.5, 0.3, 0.2))
+ifwg(x, c(0.5, 0.3, 0.2))
+ifowa(x, c(0.5, 0.3, 0.2))
+```
+
+## Entropy, distance, similarity
+
+```{r}
+if_entropy(x, "szmidt")
+if_entropy(x, "vlachos")
+b <- ifv(c(0.5, 0.4, 0.6), c(0.3, 0.3, 0.2))
+if_dist(x, b, "hamming")
+if_dist(x, b, "euclidean")
+if_sim(x, b, "ye_cosine")
+if_sim(x, b, "dice")
+```
+
+## Clustering
+
+```{r}
+set.seed(1)
+mu <- runif(30, 0.3, 0.7); nu <- runif(30, 0.05, 0.25)
+d <- ifv(mu, nu)
+r <- ifcmeans(d, k = 2, nstart = 2, maxit = 20)
+table(r$cluster)
+r$centers
+```
+
+## Inference and TOPSIS
+
+Max-min composition and the compositional rule of inference:
+
+```{r}
+R <- ifv(c(0.6, 0.3, 0.8, 0.2), c(0.2, 0.5, 0.1, 0.6))
+fact <- ifv(c(0.8, 0.2), c(0.1, 0.7))
+if_infer(fact, R, nx = 2, ny = 2)
+```
+
+IF-TOPSIS for a 3-alternative, 2-criterion problem:
+
+```{r}
+m <- ifv(c(0.6, 0.5, 0.7, 0.4, 0.5, 0.6), c(0.2, 0.3, 0.1, 0.4, 0.3, 0.2))
+if_topsis(m, nalt = 3, ncrit = 2, w = c(0.6, 0.4))
+```
